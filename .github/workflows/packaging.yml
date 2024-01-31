@@ -24,7 +24,7 @@ on:
 # Jobs to be executed
 jobs:
     release-package-version:
-        runs-on: trailheadapps-Ubuntu
+        runs-on: ubuntu-latest
         steps:
             # Install Salesforce CLI
             - name: 'Install Salesforce CLI'
@@ -187,7 +187,7 @@ jobs:
                   author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
                   commit-message: 'Released new package versions'
                   branch: 'auto/packaging-${{ github.run_id }}'
-                  token: ${{ secrets.BOT_ACCESS_TOKEN }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
             # Approve and mark PR for auto merge
             - name: 'Approve and mark PR for auto merge'
